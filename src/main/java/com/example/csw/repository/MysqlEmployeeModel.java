@@ -33,7 +33,7 @@ public class MysqlEmployeeModel implements EmployeeRepository{
         try {
             Connection connection = ConnectionHelper.getConnection();
             String sqlQuery = "update employees " +
-                    "set name = ?, price = ? where id = ?";
+                    "set name = ?, salary = ? where id = ?";
             PreparedStatement preparedStatement =  connection.prepareStatement(sqlQuery);
             preparedStatement.setString(1, updateObj.getName());
             preparedStatement.setDouble(2, updateObj.getSalary());
